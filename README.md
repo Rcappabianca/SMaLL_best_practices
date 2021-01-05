@@ -21,3 +21,7 @@ If you would like to contribute a fix or a link to a new tutorial resource, plea
 * Submit a [pull request](https://github.com/DAP93/SMaLL_best_practices/pulls)
 
 For more info read [*how to contribure* section](https://small-best-practices.readthedocs.io/en/latest/pages/how_to_contribute/index.html)
+
+
+---
+### [CREDIS](CREDITS.md)
