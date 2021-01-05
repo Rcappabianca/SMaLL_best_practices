@@ -8,8 +8,8 @@
 .. _SMaLL Team: https://www.polito.it/small
 
 
-SMaLL best practice
-===================
+SMaLL best practices
+====================
 The official page of `SMaLL Team`_ documentation!
 
 .. panels::
