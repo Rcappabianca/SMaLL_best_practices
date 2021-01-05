@@ -178,12 +178,58 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introduction-to-git-and-github">
-<h1><span class="section-number">1. </span>Introduction to Git and GitHub<a class="headerlink" href="#introduction-to-git-and-github" title="Permalink to this headline">¶</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur.</p>
+<span id="intro-to-github"></span><h1><span class="section-number">1. </span>Introduction to Git and GitHub<a class="headerlink" href="#introduction-to-git-and-github" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>Fork the <a href="#id1"><span class="problematic" id="id2">`repository`_</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clone</span></code> the forked repository localy.</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.5</span></code> (or higher) install the minimum required library with the comand:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 install -r SMALL_BEST_PRACTICES/docs/requirements.text
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">branch</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git checkout -b your-new-branch-name
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Make your changes.</p></li>
+<li><p>Compile locacaly the <em>HTML</em> files and check that all is in the right place. To compile use the make script, and in the folder <code class="docutils literal notranslate"><span class="pre">SMaLL_best_practices/docs/build/html</span></code> you will find all the <code class="docutils literal notranslate"><span class="pre">.html</span></code> files:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> SMaLL_best_practices/docs
+<span class="gp">$</span> ./make.bat html
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>add your name to the file <code class="docutils literal notranslate"><span class="pre">CREDITS.md</span></code></p></li>
+<li><p>Push changes</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>add all the files</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add .
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>commit those changes</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git commit -m <span class="s2">&quot;I make this changes: &lt;changes&gt;&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>push your changes</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git push origin your-new-branch-name
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Submit your changes for review</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>
