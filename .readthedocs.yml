@@ -21,4 +21,3 @@ python:
   version: 3.6
   install:
     - requirements: docs/requirement.txt
-    - method: pip
