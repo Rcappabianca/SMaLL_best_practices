@@ -10,7 +10,7 @@
 
 SMaLL best practices
 ====================
-The official page of `SMaLL Team`_ documentation!
+The official page of `SMaLL Team`_ documentation.
 
 .. panels::
    :body: bg-light text-center
