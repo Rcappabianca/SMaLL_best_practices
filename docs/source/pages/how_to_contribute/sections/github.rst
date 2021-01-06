@@ -211,6 +211,9 @@ If there are no errors, you will get something similar to what you see in :numre
 
 Then in the subfolder ``./docs/build/HTML``, you have all the HTML files, and you can see how your changes will appear in the website.
 
+.. note::
+   Try to solve all the errors or warnings, and compile more time untile it prints a clean output.
+
 Push changes to GitHub
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -224,6 +227,29 @@ Replace ``<add-your-branch-name>`` with the name of the branch you created earli
 
 Submit your changes for review
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you go to your repository on GitHub, you will see a ``Compare & pull request`` button. Click on that button.
+
+.. _github_fig5:
+.. figure:: ../img/github_pull_request1.png
+         :width: 70 %
+         :alt: pull request button
+         :align: center
+
+         ``Compare & pull request`` button.
+
+Now submit the pull request.
+
+.. _github_fig6:
+.. figure:: ../img/github_pull_request2.png
+         :width: 70 %
+         :alt: submit pull request
+         :align: center
+
+         submit pull request screen.
+
+Soon we will be reviewing and merging all your changes into the ``master branch``. 
+You will get a notification email once the changes have been merged.
 
 
 
