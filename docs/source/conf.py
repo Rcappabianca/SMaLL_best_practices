@@ -13,7 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+#import sphinx_fontawesome
 
 # -- Project information -----------------------------------------------------
 
@@ -38,15 +38,20 @@ extensions = [
     'sphinx.ext.ifconfig', 'sphinx.ext.intersphinx', 'sphinx.ext.viewcode',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive', 'myst_nb', 'sphinx.ext.extlinks',
-    'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels'
+    'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels', 'sphinx_tabs.tabs',
+    #'sphinx_fontawesome'
 ]
 
 ipython_mplbackend = ""
+
+panels_add_bootstrap_css = True
 
 copybutton_selector = 'div:not(.no-copy)>div.highlight pre'
 copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
 #copybutton_prompt_text = '>>> |\\\\$ |In \\\\[\\\\d+\\\\]: |\\\\s+\\.\\.\\.: '
 copybutton_prompt_is_regexp = True
+
+sphinx_tabs_valid_builders = ['linkcheck']
 
 todo_include_todos = True
 
@@ -71,9 +76,17 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+#import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_theme_path = ["_themes"]
 html_logo = "logo.svg"
+html_theme_options = {
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+}
 # Enable labeling for figures
 numfig = True
 

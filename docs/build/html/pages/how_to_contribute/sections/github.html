@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/mystnb.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx_tabs/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -102,10 +106,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_topics/index.html">Advanced topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How to contribute</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Introduction to Git and GitHub</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Introduction to Git and GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git">1.1. Git</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-on-windows">1.1.1. Installing on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-on-linux">1.1.2. Installing on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-on-macos">1.1.3. Installing on macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.2. GitHub</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-github-account">1.2.1. Create a GitHub account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fork-the-repository">1.2.2. Fork the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clone-the-repository">1.2.3. Clone the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-branch">1.2.4. Create a Branch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-python-environment">1.2.5. Setup python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-your-changes-and-commit-those-changes">1.2.6. Make your changes and commit those changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-locally">1.2.7. Compile locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#push-changes-to-github">1.2.8. Push changes to GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submit-your-changes-for-review">1.2.9. Submit your changes for review</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="restructuredtext.html">2. reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_studio_code.html">3. Suggested editor</a></li>
 </ul>
 </li>
 </ul>
@@ -179,58 +202,172 @@
             
   <div class="section" id="introduction-to-git-and-github">
 <span id="intro-to-github"></span><h1><span class="section-number">1. </span>Introduction to Git and GitHub<a class="headerlink" href="#introduction-to-git-and-github" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p>Fork the <a href="#id1"><span class="problematic" id="id2">`repository`_</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">clone</span></code> the forked repository localy.</p></li>
-<li><p>using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.5</span></code> (or higher) install the minimum required library with the comand:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 install -r SMALL_BEST_PRACTICES/docs/requirements.text
+<div class="section" id="git">
+<h2><span class="section-number">1.1. </span>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p><cite>Git</cite> is a distributed version control system designed to track changes in any set of files.
+It is a multiplatform program and is usually integrated into different modern text-editors.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The following commands assume you are in a <em>Linux environment</em> however, the same commands
+can be used in <em>Windows PowerShell</em></p>
+</div>
+<div class="section" id="installing-on-windows">
+<h3><span class="section-number">1.1.1. </span>Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Get last  <a class="reference download external" download="" href="https://git-scm.com/download/win"><code class="xref download docutils literal notranslate"><span class="pre">git</span></code></a> installation file.</p></li>
+<li><p>Execute the file <code class="docutils literal notranslate"><span class="pre">Git-x.xx.x-64-bit.exe</span></code></p></li>
+<li><p>Follow the automated installation.</p></li>
+</ol>
+</div>
+<div class="section" id="installing-on-linux">
+<h3><span class="section-number">1.1.2. </span>Installing on Linux<a class="headerlink" href="#installing-on-linux" title="Permalink to this headline">¶</a></h3>
+<p>Get <code class="docutils literal notranslate"><span class="pre">Git</span></code> from your Linux distribution repository (e.g. <code class="docutils literal notranslate"><span class="pre">apt</span></code>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install git-all
 </pre></div>
 </div>
-</div></blockquote>
+</div>
+<div class="section" id="installing-on-macos">
+<h3><span class="section-number">1.1.3. </span>Installing on macOS<a class="headerlink" href="#installing-on-macos" title="Permalink to this headline">¶</a></h3>
+<p>There is several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools
+and try to run git from the Terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
+</pre></div>
+</div>
+<p>If you do not have it installed already, it will prompt you to install it.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">1.2. </span>GitHub<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+GitHub and similar services (including GitLab and BitBucket) are websites that host a Git server program to hold your code.
+Thus using <code class="docutils literal notranslate"><span class="pre">git</span></code> you can communicate with the remote hosting services.</p>
+<div class="section" id="create-a-github-account">
+<h3><span class="section-number">1.2.1. </span>Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to get started is to create an account on <a class="reference external" href="https://github.com">GitHub</a> website (it is free).</p>
+<div class="figure align-center" id="id4">
+<span id="github-fig1"></span><a class="reference internal image-reference" href="../../../_images/github_singup.png"><img alt="github singup" src="../../../_images/github_singup.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">GitHub homepage.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="fork-the-repository">
+<h3><span class="section-number">1.2.2. </span>Fork the repository<a class="headerlink" href="#fork-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>Go to the source code <span class="fa fa-external-link"></span> <a class="reference external" href="https://github.com/DAP93/SMaLL_best_practices">repository website</a> and by clicking on the fork button on the top of the page
+(step 1 at <a class="reference internal" href="#github-fig2"><span class="std std-numref">Fig. 1.2</span></a>).
+This will create a copy of this repository in your account.</p>
+<div class="figure align-center" id="id5">
+<span id="github-fig2"></span><a class="reference internal image-reference" href="../../../_images/github_fork_and_clone.png"><img alt="github singup" src="../../../_images/github_fork_and_clone.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Fork and clone the repository.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="clone-the-repository">
+<h3><span class="section-number">1.2.3. </span>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>Now clone the forked repository to get a copy on your local machine using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>.
+Go to your GitHub account, open the forked repository, click on the green code button, and then click the copy to clipboard icon (step 2 and 3 at <a class="reference internal" href="#github-fig2"><span class="std std-numref">Fig. 1.2</span></a>). And in the terminal type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/&lt;your_username&gt;/SMaLL_best_practices.git
+</pre></div>
+</div>
+<p>Where you have to replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your GitHub username.</p>
+</div>
+<div class="section" id="create-a-branch">
+<h3><span class="section-number">1.2.4. </span>Create a Branch<a class="headerlink" href="#create-a-branch" title="Permalink to this headline">¶</a></h3>
+<p>Branching is the way to work on different versions of a repository at one time (<a class="reference internal" href="#github-fig3"><span class="std std-numref">Fig. 1.3</span></a>).
+To create a <code class="docutils literal notranslate"><span class="pre">branch</span></code> first, you have to move to the repository directory on your computer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> SMaLL_best_practices
+</pre></div>
+</div>
+<p>Now create a <code class="docutils literal notranslate"><span class="pre">branch</span></code> using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b &lt;your-new-branch-name&gt;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;your-new-branch-name&gt;</span></code> is the name of the <code class="docutils literal notranslate"><span class="pre">branch</span></code>.</p>
+<div class="figure align-center" id="id6">
+<span id="github-fig3"></span><a class="reference internal image-reference" href="../../../_images/github_branching.png"><img alt="github singup" src="../../../_images/github_branching.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Create, submit and merge a branch named <code class="docutils literal notranslate"><span class="pre">feature</span></code>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The branch name as to be a single word, thus replace the spaces with the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The name of the branch does not need to have the word add in it,
+but it’s a reasonable thing to include because the purpose of this branch is to add your name to a list
+and its main changes.</p>
+</div>
+</div>
+<div class="section" id="setup-python-environment">
+<h3><span class="section-number">1.2.5. </span>Setup python environment<a class="headerlink" href="#setup-python-environment" title="Permalink to this headline">¶</a></h3>
+<p>Now that you have all the documentation in your local machine, you can have to install the minimum required python packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip3 install -r SMaLL_best_practices/docs/requirement.txt
+</pre></div>
+</div>
+<p>We suggest creating a <em>virtual python environment</em> outside the repository folder (see <a class="reference internal" href="../../quick_start/python/sections/basics.html#python-basics"><span class="std std-ref">Python basics</span></a>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the <em>virtual python environment</em> is inside the repository folder, once you will <a href="#id2"><span class="problematic" id="id3">``</span></a>push``(upload) your chage, you will upload the virtual environment too.</p>
+</div>
+</div>
+<div class="section" id="make-your-changes-and-commit-those-changes">
+<h3><span class="section-number">1.2.6. </span>Make your changes and commit those changes<a class="headerlink" href="#make-your-changes-and-commit-those-changes" title="Permalink to this headline">¶</a></h3>
+<p>Now you can start to make your changes; the file format to use is the reStructuredText (<code class="docutils literal notranslate"><span class="pre">.rst</span></code>), basic concepts is available
+in the section <a class="reference internal" href="restructuredtext.html#restructuredtext"><span class="std std-ref">reStructuredText</span></a>, for a more exhaustive guide, also read the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx page</a>.</p>
+<p>To check your changes, respect the old documentation, you can run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<p>Once you finish modifying a page, you can upload it to GitHub with the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.
+First, you add the changed files to the list of the commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add &lt;file name&gt;
+</pre></div>
+</div>
+<p>or all the folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .
+</pre></div>
+</div>
+<p>Then you can define a commit associated with the selected files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;&lt;comment&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add ./doc/source/exmaple.rst
+$ git commit -m <span class="s2">&quot;add the page ./doc/source/exmaple.rst&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can think of the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command as a special way to save your progress since instead to have many changes in only one
+<em>commit</em>, you brake it into smaller parts</p>
+</div>
+</div>
+<div class="section" id="compile-locally">
+<h3><span class="section-number">1.2.7. </span>Compile locally<a class="headerlink" href="#compile-locally" title="Permalink to this headline">¶</a></h3>
+<p>To see the changes, you have to ways:</p>
+<ol class="arabic">
+<li><p>Using <em>Visual Studio Code</em> and the <em>reStructuredText</em> extension (or similar) to get a preview of the web page (see the page <a class="reference internal" href="visual_studio_code.html#visual-studio-code"><span class="std std-ref">Suggested editor</span></a>)</p></li>
+<li><p>Compile the documentation with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">HTML</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make html          <span class="c1"># linux/macos</span>
+&gt; .<span class="se">\m</span>ake.bat html    <span class="c1"># windows</span>
+</pre></div>
+</div>
 </li>
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">branch</span></code></p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git checkout -b your-new-branch-name
+</ol>
+<p>If there are no errors, you will get something similar to what you see in <a class="reference internal" href="#github-fig4"><span class="std std-numref">Fig. 1.4</span></a>.</p>
+<div class="figure align-center" id="id7">
+<span id="github-fig4"></span><a class="reference internal image-reference" href="../../../_images/make_output.png"><img alt="make html output" src="../../../_images/make_output.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">HTML</span></code> output.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Then in the subfolder <code class="docutils literal notranslate"><span class="pre">./docs/build/HTML</span></code>, you have all the HTML files, and you can see how your changes will appear in the website.</p>
+</div>
+<div class="section" id="push-changes-to-github">
+<h3><span class="section-number">1.2.8. </span>Push changes to GitHub<a class="headerlink" href="#push-changes-to-github" title="Permalink to this headline">¶</a></h3>
+<p>Push (upload) your changes using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin &lt;add-your-branch-name&gt;
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Make your changes.</p></li>
-<li><p>Compile locacaly the <em>HTML</em> files and check that all is in the right place. To compile use the make script, and in the folder <code class="docutils literal notranslate"><span class="pre">SMaLL_best_practices/docs/build/html</span></code> you will find all the <code class="docutils literal notranslate"><span class="pre">.html</span></code> files:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> SMaLL_best_practices/docs
-<span class="gp">$</span> ./make.bat html
-</pre></div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;add-your-branch-name&gt;</span></code> with the name of the branch you created earlier.</p>
 </div>
-</div></blockquote>
-</li>
-<li><p>add your name to the file <code class="docutils literal notranslate"><span class="pre">CREDITS.md</span></code></p></li>
-<li><p>Push changes</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>add all the files</p></li>
-</ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add .
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>commit those changes</p></li>
-</ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git commit -m <span class="s2">&quot;I make this changes: &lt;changes&gt;&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>push your changes</p></li>
-</ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git push origin your-new-branch-name
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Submit your changes for review</p></li>
-</ul>
+<div class="section" id="submit-your-changes-for-review">
+<h3><span class="section-number">1.2.9. </span>Submit your changes for review<a class="headerlink" href="#submit-your-changes-for-review" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 </div>
 
