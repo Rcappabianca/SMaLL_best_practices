@@ -142,7 +142,7 @@ Now that you have all the documentation in your local machine, you can have to i
 We suggest creating a *virtual python environment* outside the repository folder (see :ref:`Python basics<python_basics>`).
 
 .. important::
-   If the *virtual python environment* is inside the repository folder, once you will ``push``(upload) your chage, you 
+   If the *virtual python environment* is inside the repository folder, once you will ``push`` (upload) your chage, you 
    will upload the virtual environment too.
 
 
@@ -251,6 +251,8 @@ Now submit the pull request.
 Soon we will be reviewing and merging all your changes into the ``master branch``. 
 You will get a notification email once the changes have been merged.
 
+.. important::
+   When you submit the branch to the review, please add some comments to allow the reader to understand what you did.
 
 
 .. toctree::
