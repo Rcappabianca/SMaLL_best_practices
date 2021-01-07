@@ -46,6 +46,8 @@
         <script src="../../../../_static/clipboard.min.js"></script>
         <script src="../../../../_static/copybutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -106,10 +108,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Quick start</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../python/index.html">Python for beginners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux for beginners</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workststions guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workstations guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="modules.html">1. How to use <code class="docutils literal notranslate"><span class="pre">modules</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ws_prometheus.html">2. WS denerg33078 (a.k.a Prometheus)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3. WS denerg33184 (a.k.a Titan)</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3. WS denerg33184 (a.k.a Titan)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">3.1. Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#benchmark">3.2. Benchmark</a></li>
 </ul>
 </li>
 </ul>
@@ -169,7 +173,7 @@
         
           <li><a href="../../index.html">Quick start</a> &raquo;</li>
         
-          <li><a href="../index.html">Workststions guide</a> &raquo;</li>
+          <li><a href="../index.html">Workstations guide</a> &raquo;</li>
         
       <li><span class="section-number">3. </span>WS denerg33184 (a.k.a Titan)</li>
     
@@ -192,12 +196,26 @@
             
   <div class="section" id="ws-denerg33184-a-k-a-titan">
 <h1><span class="section-number">3. </span>WS denerg33184 (a.k.a Titan)<a class="headerlink" href="#ws-denerg33184-a-k-a-titan" title="Permalink to this headline">¶</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur.</p>
+<div class="section" id="overview">
+<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../../../_images/denerg33184.png"><img alt="Prometheus WS" class="align-center" src="../../../../_images/denerg33184.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="benchmark">
+<h2><span class="section-number">3.2. </span>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline">¶</a></h2>
+<p>We compute the scalability efficiency with the Eq. <a class="reference internal" href="#equation-eq-efficiency-titan">(3.1)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-efficiency-titan">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-efficiency-titan" title="Permalink to this equation">¶</a></span>\[\eta = \dfrac{p_N}{p_1 \cdot N} \cdot  100\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of cores, <span class="math notranslate nohighlight">\(p_N\)</span> is the performance measure for the test with <span class="math notranslate nohighlight">\(N\)</span> cores (e.g ns/day for MD simulations)
+and  <span class="math notranslate nohighlight">\(p_1\)</span> is the performance measured with only one core.</p>
+<div class="section" id="tensorflow-2">
+<h3><span class="section-number">3.2.1. </span>Tensorflow 2<a class="headerlink" href="#tensorflow-2" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id1">
+<span id="titan-fig1"></span><a class="reference internal image-reference" href="../../../../_images/TF_denerg33184.png"><img alt="Tensorflow 2 Benchmark" src="../../../../_images/TF_denerg33184.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">2</span></code> Benchmark results for WS Titan.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 </div>
 

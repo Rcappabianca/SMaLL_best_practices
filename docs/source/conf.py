@@ -14,6 +14,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 #import sphinx_fontawesome
+import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
@@ -39,6 +40,7 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive', 'myst_nb', 'sphinx.ext.extlinks',
     'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels', 'sphinx_tabs.tabs',
+    'sphinx_rtd_theme',
     #'sphinx_fontawesome'
 ]
 
@@ -102,3 +104,51 @@ html_static_path = ['_static']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# -- Options for LaTeX output --------------------------------------------------
+
+latex_engine = 'xelatex'
+
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #'papersize': 'letterpaper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    #'pointsize': '10pt',
+
+    # Additional stuff for the LaTeX preamble.
+    'preamble':
+    r'''
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{braket}
+\usepackage{newunicodechar}
+\newunicodechar{⏹}{\ensuremath{\square}}
+''',
+}
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title, author, documentclass [howto/manual]).
+latex_documents = [
+    ('index', 'aiida-tutorials.tex', u'AiiDA Tutorials',
+     author.replace(',', r'\and'), 'manual'),
+]
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+#latex_logo = None
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+#latex_use_parts = False
+
+# If true, show page references after internal links.
+#latex_show_pagerefs = False
+
+# If true, show URL addresses after external links.
+#latex_show_urls = False
+
+# Documents to append as an appendix to all manuals.
+#latex_appendices = []
+
+# If false, no module index is generated.
+#latex_domain_indices = True
