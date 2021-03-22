@@ -147,6 +147,14 @@ The official page of `SMaLL Team`_ documentation.
    ---
    :column: col-lg-12 col-xs-12 pl-0 pr-0
 
+   .. link-button:: pages/tutorials/index
+         :type: ref
+         :text: Tutorials
+         :classes: btn-link btn-block stretched-link
+
+   ---
+   :column: col-lg-12 col-xs-12 pl-0 pr-0
+
    .. link-button:: pages/how_to_contribute/index
          :type: ref
          :text: How to contribute
@@ -163,3 +171,4 @@ The official page of `SMaLL Team`_ documentation.
    ./pages/quick_start/*
    ./pages/advanced_topics/*
    ./pages/how_to_contribute/*
+   ./pages/tutorials/*
