@@ -115,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#colab">1.2. Colab</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#handwritten-number-recognition-with-vgg16">1.3. Handwritten number recognition with VGG16</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#handwritten-number-recognition-with-cnn">1.3. Handwritten number recognition with CNN</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#environment-set-up">1.3.1. Environment set-up</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data-collection-and-preprocessing">1.3.2. Data collection and preprocessing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#model-building">1.3.3. Model building</a></li>
@@ -208,16 +208,16 @@
 <p>The Convolutional Neural Network (CNN) is a class of Deep Learning Netower extensively used in image analysis (Computer Vision).
 The main feature is the Convolution Layer, which replaces the classic Perceptron (i.e., the “Neuron” of a Neural Network) with a “Filter”
 containing the “weights” that convolute the input from the previous layer <a class="reference internal" href="#cnn-example"><span class="std std-numref">Fig. 1.7</span></a>.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <span id="cnn-example"></span><a class="reference internal image-reference" href="../../../_images/cnn.jpeg"><img alt="cnn" src="../../../_images/cnn.jpeg" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Example of CNN architecture to classify handwritten digits.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Example of CNN architecture to classify handwritten digits.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Let see some possible <cite>layer</cite> that you can use in a CNN:</p>
 <div class="section" id="convolution-layer">
 <h3><span class="section-number">1.1.1. </span>Convolution layer<a class="headerlink" href="#convolution-layer" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <span id="cnn-covolution"></span><a class="reference internal image-reference" href="../../../_images/covolution_stride_padding.gif"><img alt="covolution" src="../../../_images/covolution_stride_padding.gif" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Convolutional layers example with differnt <code class="docutils literal notranslate"><span class="pre">stride</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> hyperparameters.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Convolutional layers example with differnt <code class="docutils literal notranslate"><span class="pre">stride</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> hyperparameters.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The convolutional layer is the Neural Networks (NN) solution to replace the fully connected Perceptron layer.
 When dealing with n-dimensional tensor (with n &gt; 1), the memory required to build a classic NN raises fast and reaches a value that makes
@@ -239,9 +239,9 @@ have the same size (this is usualy called “same” padding).</p>
 </div>
 <div class="section" id="pooling-layer">
 <h3><span class="section-number">1.1.2. </span>Pooling layer<a class="headerlink" href="#pooling-layer" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <span id="cnn-pooling"></span><a class="reference internal image-reference" href="../../../_images/pooling.png"><img alt="covolution" src="../../../_images/pooling.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Pooling layer.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Pooling layer.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>A pooling layer, <a class="reference internal" href="#cnn-pooling"><span class="std std-numref">Fig. 1.9</span></a>, is nothing but reducing the information size. While in convolution out NN is “learning” in this layer, we
 are reducing the data size. Therefore we are losing info, but we are highlighting the only feature that matters.</p>
@@ -258,20 +258,20 @@ and for working with the Neural network, we have a lot of them. To name some: <a
 It is a Jupyter notebook; therefore, we can write and run the <cite>blocks</cite> element. These can be a <cite>code block</cite> or a <cite>text block</cite>, <a class="reference internal" href="#colab-block"><span class="std std-numref">Fig. 1.10</span></a>.
 In the first one, we can write everything is python readable, in the second everything si <a class="reference external" href="https://it.wikipedia.org/wiki/Markdown">Markdown</a>
 readable. To run the block, we can click on the “play” button on the side or use the shortcut <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code>.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <span id="colab-block"></span><a class="reference internal image-reference" href="../../../_images/colab_block.png"><img alt="Coolab blocks view" src="../../../_images/colab_block.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Coolab blocks view.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Coolab blocks view.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Before to everything, we have to set up the cloud driver, go to the “runtime” drop-down menu, select
 “change runtime type” and choose TPU in the hardware accelerator drop-down menu (<a class="reference internal" href="#colab-runtime"><span class="std std-numref">Fig. 1.11</span></a>).
 (TPU stand for Tensor Processing Unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google)</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <span id="colab-runtime"></span><a class="reference internal image-reference" href="../../../_images/runtime.png"><img alt="Change runtime type popup" src="../../../_images/runtime.png" style="width: 35%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Change runtime type popup.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Change runtime type popup.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="handwritten-number-recognition-with-vgg16">
-<h2><span class="section-number">1.3. </span>Handwritten number recognition with VGG16<a class="headerlink" href="#handwritten-number-recognition-with-vgg16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="handwritten-number-recognition-with-cnn">
+<h2><span class="section-number">1.3. </span>Handwritten number recognition with CNN<a class="headerlink" href="#handwritten-number-recognition-with-cnn" title="Permalink to this headline">¶</a></h2>
 <p>To build a NN, we go throw the following steps:</p>
 <ol class="arabic simple">
 <li><p>Environment set-up.</p></li>
@@ -286,7 +286,7 @@ If you want to use the top in the market go to see the last model winner of the 
 <div class="section" id="environment-set-up">
 <h3><span class="section-number">1.3.1. </span>Environment set-up<a class="headerlink" href="#environment-set-up" title="Permalink to this headline">¶</a></h3>
 <p>First of all let’s open a section by createing a new <em>Text block</em> and writing inside the code:</p>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh">#</span> Libaries
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh">#</span> Libraries
 </pre></div>
 </div>
 <p>Then we load all the python libraries needed for this project.</p>
@@ -312,7 +312,7 @@ If you want to use the top in the market go to see the last model winner of the 
 </div>
 </div>
 <div class="section" id="data-collection-and-preprocessing">
-<h3><span class="section-number">1.3.2. </span>Data collection and preprocessing<a class="headerlink" href="#data-collection-and-preprocessing" title="Permalink to this headline">¶</a></h3>
+<span id="section-data-collection"></span><h3><span class="section-number">1.3.2. </span>Data collection and preprocessing<a class="headerlink" href="#data-collection-and-preprocessing" title="Permalink to this headline">¶</a></h3>
 <p>In this part we downolad and look at out dataset.
 The MNIST (Modified database National Institute of Standards and Technology) is a collection of 70.000 handwritten 10-digit images,
 downsampled in size (28 × 28 pixels), in black and white and therefore with only one color channel.</p>
@@ -451,7 +451,7 @@ and the right metrics for the evaulation.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="gp">   ...: </span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">   ...:</span>
-<span class="gp">   ...: </span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<span class="gp">   ...: </span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
 <span class="gp">   ...: </span>    <span class="n">train_images</span><span class="p">,</span>
 <span class="gp">   ...: </span>    <span class="n">train_labels</span><span class="p">,</span>
 <span class="gp">   ...: </span>    <span class="n">batch_size</span><span class="p">,</span>
@@ -459,6 +459,25 @@ and the right metrics for the evaulation.</p>
 <span class="gp">   ...: </span><span class="p">)</span>
 </pre></div>
 </div>
+<p>At the end of the training, we can plot the learning curve of the model:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="c1"># Plot traing loop</span>
+<span class="gp">   ...: </span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="gp">   ...: </span><span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
+<span class="gp">   ...: </span><span class="n">epochs_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="gp">   ...:</span>
+<span class="gp">   ...: </span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">4.5</span><span class="p">))</span>
+<span class="gp">   ...: </span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="s1">&#39;111&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">ax_twin</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="gp">   ...: </span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_i</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">ax_twin</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_i</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epochs [-]&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy [%]&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">ax_twin</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss [-]&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/learning_curve.png"><img alt="learning curve" class="align-center" src="../../../_images/learning_curve.png" style="width: 70%;" /></a>
 </div>
 <div class="section" id="results">
 <h3><span class="section-number">1.3.6. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
@@ -468,7 +487,7 @@ and the right metrics for the evaulation.</p>
 </pre></div>
 </div>
 <p>Then we have to collect the prediction for the <em>Test set</em> <code class="docutils literal notranslate"><span class="pre">test_images</span></code></p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_images</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_images</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We write some function useful to visualizing the data:</p>
@@ -477,47 +496,47 @@ and the right metrics for the evaulation.</p>
             <span class="s1">&#39;Five&#39;</span><span class="p">,</span> <span class="s1">&#39;Six&#39;</span><span class="p">,</span> <span class="s1">&#39;Seven&#39;</span><span class="p">,</span> <span class="s1">&#39;Eight&#39;</span><span class="p">,</span> <span class="s1">&#39;Nine&#39;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">plot_image</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
-<span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+    <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">binary</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">binary</span><span class="p">)</span>
 
-<span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">predicted_label</span> <span class="o">==</span> <span class="n">true_label</span><span class="p">:</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">predicted_label</span> <span class="o">==</span> <span class="n">true_label</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{:2.0f}</span><span class="s2">% (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">predicted_label</span><span class="p">],</span>
-                                <span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">),</span>
-                                <span class="n">class_names</span><span class="p">[</span><span class="n">true_label</span><span class="p">]),</span>
-                                <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{:2.0f}</span><span class="s2">% (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">predicted_label</span><span class="p">],</span>
+                                    <span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">),</span>
+                                    <span class="n">class_names</span><span class="p">[</span><span class="n">true_label</span><span class="p">]),</span>
+                                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">plot_value_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">):</span>
-<span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span> <span class="o">=</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
-<span class="n">thisplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#777777&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">)</span>
+    <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span> <span class="o">=</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">true_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+    <span class="n">thisplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">predictions_array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#777777&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions_array</span><span class="p">)</span>
 
-<span class="n">thisplot</span><span class="p">[</span><span class="n">predicted_label</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">thisplot</span><span class="p">[</span><span class="n">true_label</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">thisplot</span><span class="p">[</span><span class="n">predicted_label</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">thisplot</span><span class="p">[</span><span class="n">true_label</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>and let us see the prediction versus teh ground true:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">num_rows</span> <span class="o">=</span> <span class="mi">5</span>
+<p>And let us see the prediction versus the ground truth:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">num_rows</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">   ...: </span><span class="n">num_cols</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">   ...: </span><span class="n">num_images</span> <span class="o">=</span> <span class="n">num_rows</span><span class="o">*</span><span class="n">num_cols</span>
 <span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">num_cols</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">num_rows</span><span class="p">))</span>
 <span class="gp">   ...: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_images</span><span class="p">):</span>
-<span class="gp">   ...: </span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">num_cols</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">   ...: </span>  <span class="n">plot_image</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">test_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">test_images</span><span class="p">))</span>
-<span class="gp">   ...: </span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">num_cols</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">   ...: </span>  <span class="n">plot_value_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">test_labels</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">num_cols</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="n">plot_image</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">test_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">test_images</span><span class="p">))</span>
+<span class="gp">   ...: </span>    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">num_cols</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="n">plot_value_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">test_labels</span><span class="p">)</span>
 <span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -526,6 +545,21 @@ and the right metrics for the evaulation.</p>
 </div>
 <div class="section" id="excercise">
 <h2><span class="section-number">1.4. </span>Excercise<a class="headerlink" href="#excercise" title="Permalink to this headline">¶</a></h2>
+<p>Following the same steps, build a similar CNN for the <em>Fashion MNIST</em> database <a class="reference external" href="https://github.com/zalandoresearch/fashion-mnist">https://github.com/zalandoresearch/fashion-mnist</a>.
+First test if all is working by only changing the <a class="reference external" href="Section_data_collection">Data collection and preprocessing</a> command with:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fashion_mnist</span>
+<span class="gp">   ...: </span><span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then, one at the time, add the following features at your code:</p>
+<ol class="arabic simple">
+<li><p>Build a custom data pipeline (see guide <a class="reference external" href="https://www.tensorflow.org/guide/data">Tensorflow Data</a>) to load the <em>Fashion MNIST</em>.</p></li>
+<li><p>Add an additional convolutional block with 48 3x3 kernels to the model.</p></li>
+<li><p>Write the training loop from scratch (see guide <a class="reference external" href="https://www.tensorflow.org/guide/keras/writing_a_training_loop_from_scratch">Tensorflow Training loop</a>).</p></li>
+<li><p>Add to the model callback option to save checkpoint every 10 epochs (see guide <a class="reference external" href="https://www.tensorflow.org/guide/checkpoint">Tensorflow Checkpoint</a>).</p></li>
+<li><p>Save the model (see guide <a class="reference external" href="https://www.tensorflow.org/guide/saved_model">Tensorflow Save model</a>).</p></li>
+</ol>
+<p>For help with all these tasks, consult the <a class="reference external" href="https://www.tensorflow.org/guide">Tensorflow Guide</a>, and the internet is full of answers to your question.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

@@ -94,7 +94,7 @@ In the first one, we can write everything is python readable, in the second ever
 readable. To run the block, we can click on the "play" button on the side or use the shortcut ``shift+enter``.
 
 .. _colab_block:
-.. figure:: ./img/colab_block.png
+.. figure:: img/colab_block.png
          :width: 100 %
          :alt: Coolab blocks view
          :align: center
@@ -106,15 +106,15 @@ Before to everything, we have to set up the cloud driver, go to the "runtime" dr
 (TPU stand for Tensor Processing Unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google)
 
 .. _colab_runtime:
-.. figure:: ./img/runtime.png
+.. figure:: img/runtime.png
          :width: 35 %
          :alt: Change runtime type popup
          :align: center
 
          Change runtime type popup.
 
-Handwritten number recognition with VGG16
------------------------------------------
+Handwritten number recognition with CNN
+---------------------------------------
 
 To build a NN, we go throw the following steps:
 
@@ -134,7 +134,7 @@ First of all let's open a section by createing a new *Text block* and writing in
 
 .. code-block:: md 
 
-    # Libaries
+    # Libraries
 
 Then we load all the python libraries needed for this project.
 
@@ -162,6 +162,7 @@ We check if the TPU is working.
     Running on TPU  ['10.115.241.50:8470']
 
 
+.. _Section_data_collection:
 
 Data collection and preprocessing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -342,12 +343,37 @@ And let us train the model with the `train_images` dataset.
     In [10]: batch_size = 256
        ...: epochs = 10
        ...: 
-       ...: model.fit(
+       ...: history = model.fit(
        ...:     train_images,
        ...:     train_labels,
        ...:     batch_size,
        ...:     epochs,
        ...: )
+
+At the end of the training, we can plot the learning curve of the model:
+
+.. code-block:: ipython 
+
+    In [11]: # Plot traing loop
+       ...: accuracy = np.array(history.history['accuracy'])
+       ...: loss = np.array(history.history['loss'])
+       ...: epochs_i = np.arange(1,11)
+       ...: 
+       ...: fig = plt.figure(figsize=(10,4.5))
+       ...: ax = fig.add_subplot('111')
+       ...: ax_twin = ax.twinx()
+       ...: ax.plot(epochs_i, accuracy*100, color='k')
+       ...: ax_twin.plot(epochs_i, loss, color='r')
+       ...: ax.set_xlabel('Epochs [-]')
+       ...: ax.set_ylabel('Accuracy [%]')
+       ...: ax_twin.set_ylabel('Loss [-]')
+       ...: plt.tight_layout()
+       ...: plt.show()
+
+.. image:: ./img/learning_curve.png
+    :width: 70%
+    :alt: learning curve
+    :align: center
 
 Results
 ^^^^^^^
@@ -364,7 +390,7 @@ Then we have to collect the prediction for the *Test set* ``test_images``
 
 .. code-block:: ipython 
 
-    In [11]: predictions = model.predict(test_images)
+    In [12]: predictions = model.predict(test_images)
 
 We write some function useful to visualizing the data:
 
@@ -375,50 +401,50 @@ We write some function useful to visualizing the data:
                 'Five', 'Six', 'Seven', 'Eight', 'Nine']
 
     def plot_image(i, predictions_array, true_label, img):
-    predictions_array, true_label, img = predictions_array, true_label[i], img[i]
-    plt.grid(False)
-    plt.xticks([])
-    plt.yticks([])
+        predictions_array, true_label, img = predictions_array, true_label[i], img[i]
+        plt.grid(False)
+        plt.xticks([])
+        plt.yticks([])
 
-    plt.imshow(img, cmap=plt.cm.binary)
+        plt.imshow(img, cmap=plt.cm.binary)
 
-    predicted_label = np.argmax(predictions_array)
-    if predicted_label == true_label:
-        color = 'blue'
-    else:
-        color = 'red'
+        predicted_label = np.argmax(predictions_array)
+        if predicted_label == true_label:
+            color = 'blue'
+        else:
+            color = 'red'
 
-    plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label],
-                                    100*np.max(predictions_array),
-                                    class_names[true_label]),
-                                    color=color)
+        plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label],
+                                        100*np.max(predictions_array),
+                                        class_names[true_label]),
+                                        color=color)
 
     def plot_value_array(i, predictions_array, true_label):
-    predictions_array, true_label = predictions_array, true_label[i]
-    plt.grid(False)
-    plt.xticks(range(10))
-    plt.yticks([])
-    thisplot = plt.bar(range(10), predictions_array, color="#777777")
-    plt.ylim([0, 1])
-    predicted_label = np.argmax(predictions_array)
+        predictions_array, true_label = predictions_array, true_label[i]
+        plt.grid(False)
+        plt.xticks(range(10))
+        plt.yticks([])
+        thisplot = plt.bar(range(10), predictions_array, color="#777777")
+        plt.ylim([0, 1])
+        predicted_label = np.argmax(predictions_array)
 
-    thisplot[predicted_label].set_color('red')
-    thisplot[true_label].set_color('blue')
+        thisplot[predicted_label].set_color('red')
+        thisplot[true_label].set_color('blue')
 
 
-and let us see the prediction versus teh ground true:
+And let us see the prediction versus the ground truth:
 
 .. code-block:: ipython 
 
-    In [12]: num_rows = 5
+    In [13]: num_rows = 5
        ...: num_cols = 3
        ...: num_images = num_rows*num_cols
        ...: plt.figure(figsize=(2*2*num_cols, 2*num_rows))
        ...: for i in range(num_images):
-       ...:   plt.subplot(num_rows, 2*num_cols, 2*i+1)
-       ...:   plot_image(i, predictions[i], test_labels, np.squeeze(test_images))
-       ...:   plt.subplot(num_rows, 2*num_cols, 2*i+2)
-       ...:   plot_value_array(i, predictions[i], test_labels)
+       ...:     plt.subplot(num_rows, 2*num_cols, 2*i+1)
+       ...:     plot_image(i, predictions[i], test_labels, np.squeeze(test_images))
+       ...:     plt.subplot(num_rows, 2*num_cols, 2*i+2)
+       ...:     plot_value_array(i, predictions[i], test_labels)
        ...: plt.tight_layout()
        ...: plt.show()
 
@@ -426,6 +452,23 @@ and let us see the prediction versus teh ground true:
 Excercise
 ---------
 
+Following the same steps, build a similar CNN for the *Fashion MNIST* database `https://github.com/zalandoresearch/fashion-mnist <https://github.com/zalandoresearch/fashion-mnist>`_.
+First test if all is working by only changing the `Data collection and preprocessing <Section_data_collection>`_ command with:
+
+.. code-block:: ipython 
+
+    In [3]: mnist = tf.keras.datasets.fashion_mnist
+       ...: (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+Then, one at the time, add the following features at your code:
+
+#. Build a custom data pipeline (see guide `Tensorflow Data <https://www.tensorflow.org/guide/data>`_) to load the *Fashion MNIST*.
+#. Add an additional convolutional block with 48 3x3 kernels to the model.
+#. Write the training loop from scratch (see guide `Tensorflow Training loop <https://www.tensorflow.org/guide/keras/writing_a_training_loop_from_scratch>`_).
+#. Add to the model callback option to save checkpoint every 10 epochs (see guide `Tensorflow Checkpoint <https://www.tensorflow.org/guide/checkpoint>`_).
+#. Save the model (see guide `Tensorflow Save model <https://www.tensorflow.org/guide/saved_model>`_).
+
+For help with all these tasks, consult the `Tensorflow Guide <https://www.tensorflow.org/guide>`_, and the internet is full of answers to your question.
 
 
 .. toctree::
