@@ -94,7 +94,7 @@ In the first one, we can write everything is python readable, in the second ever
 readable. To run the block, we can click on the "play" button on the side or use the shortcut ``shift+enter``.
 
 .. _colab_block:
-.. figure:: ./img/colab_block.png
+.. figure:: img/colab_block.png
          :width: 100 %
          :alt: Coolab blocks view
          :align: center
@@ -106,7 +106,7 @@ Before to everything, we have to set up the cloud driver, go to the "runtime" dr
 (TPU stand for Tensor Processing Unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google)
 
 .. _colab_runtime:
-.. figure:: ./img/runtime.png
+.. figure:: img/runtime.png
          :width: 35 %
          :alt: Change runtime type popup
          :align: center
