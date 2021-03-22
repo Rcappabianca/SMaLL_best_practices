@@ -1,0 +1,92 @@
+.. Links:
+
+.. _Convolutional Neural Network: https://en.wikipedia.org/wiki/Convolutional_neural_network
+.. _MNIST Dataset: https://en.wikipedia.org/wiki/MNIST_database
+.. _scikit-learn: https://scikit-learn.org/stable/index.html
+.. _pyThorch: https://pytorch.org/
+.. _Tensorflow: https://www.tensorflow.org/
+
+
+
+Deep Learing with Colab (an introduction)
+=========================================
+This tutorial demonstrates training a simple `Convolutional Neural Network`_ (CNN) to classify `MNIST Dataset`_.
+
+CNN in a glance
+---------------
+The Convolutional Neural Network (CNN) is a class of Deep Learning Netower extensively used in image analysis (Computer Vision).
+The main feature is the Convolution Layer, which replaces the classic Perceptron (i.e., the "Neuron" of a Neural Network) with a "Filter"
+containing the "weights" that convolute the input from the previous layer :numref:`cnn_example`.
+
+.. _cnn_example:
+.. figure:: ./img/cnn.jpeg
+         :width: 80 %
+         :alt: cnn
+         :align: center
+
+         Example of CNN architecture to classify handwritten digits.
+
+Let see some possible `layer` that you can use in a CNN:
+
+Convolution layer
+^^^^^^^^^^^^^^^^^
+
+.. _cnn_covolution:
+.. figure:: ./img/covolution_stride_padding.gif
+         :width: 80 %
+         :alt: covolution
+         :align: center
+
+         Convolutional layers example with differnt ``stride`` and ``padding`` hyperparameters.
+
+The convolutional layer is the Neural Networks (NN) solution to replace the fully connected Perceptron layer. 
+When dealing with n-dimensional tensor (with n > 1), the memory required to build a classic NN raises fast and reaches a value that makes
+the use of this technique unuseful. The solution is, instead to connect each neuron to every input pixel, we use a `filter` (a.k.a. `kernel`)
+which scans the previous layer's input, and the resulting product (convolution) builds the output.
+The main and crucial hyperparameter of this layer is the ``stride`` and ``padding``, :numref:`cnn_covolution`:
+
+``Stride`` is the number of pixels shifts over the input matrix.
+When the stride is 1 then we move filters to 1 pixel at a time.
+When the stride is 2, then we move the filters to 2 pixels at a time and so on.
+
+``Padding`` is the amount of zeoro-element added to an image (input tensor) when it is being processed by the kernel of a CNN.
+
+Changin the ``stride`` and ``padding`` chenge the output layer shape, and the output width or height can be compute with the 
+:eq:`stide_padding`
+
+.. math:: O = \dfrac{I - K + 2P}{S} +1
+   :label: stide_padding
+
+where :math:`O` is the output width/height, :math:`I` is the input width/height, :math:`K` is the kernel size, 
+:math:`P` is teh padding and :math:`S` is the stide.
+
+Note with a kernel of 3x3 (:math:`K=3`) we have that settintg the ``stride=None`` and ``padding=2`` the input and output layer 
+have the same size (this is usualy called "same" padding).
+
+Pooling layer
+^^^^^^^^^^^^^
+.. _cnn_pooling:
+.. figure:: ./img/pooling.png
+         :width: 40 %
+         :alt: covolution
+         :align: center
+
+         Pooling layer.
+
+A pooling layer, :numref:`cnn_pooling`, is nothing but reducing the information size. While in convolution out NN is "learning" in this layer, we 
+are reducing the data size. Therefore we are losing info, but we are highlighting the only feature that matters. 
+
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+
+Colab
+-----
+Colab is a free Jupyter notebook environment that runs entirely in the cloud. Here we can use all the libraries available for python, 
+and for working with the Neural network, we have a lot of them. To name some: `scikit-learn`_, `pyThorch`_ and  `Tensorflow`_.
+
+In this tutorial, we are going to use the latter one.
+
+Lets go to Colab `https://colab.research.google.com/ <https://colab.research.google.com/>`_ open an accout and a new nootebook.
+
+To build a NN we need to follow 
