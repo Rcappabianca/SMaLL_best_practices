@@ -2,7 +2,8 @@
 
 | Name | Mail | Tasks |
 | --- | --- | --- |
-| Paolo De Angelis    | [paolo.deangelis@polito.it](mailto:paolo.deangelis@polito.it) | ⭐👨‍🎓✍🐛
+| Paolo De Angelis    | [paolo.deangelis@polito.it](mailto:paolo.deangelis@polito.it) | ⭐👨‍🎓✍🐛✔
+| Roberta Cappabianca    | [roberta.cappabianca@polito.it](mailto:roberta.cappabianca@polito.it) | ⭐👨‍🎓✍🐛✔
 
 
 ---
